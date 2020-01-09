@@ -1,0 +1,12 @@
+{
+    "name": "remimichel/poc-storage",
+    "authors": [
+        {
+            "name": "remimichel",
+            "email": "remi.michel38@gmail.com"
+        }
+    ],
+    "require": {
+        "rackspace/php-opencloud": "^1.16"
+    }
+}
