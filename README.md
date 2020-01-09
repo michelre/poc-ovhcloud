@@ -1,5 +1,8 @@
 # Documentation
 
+## Démo
+http://poc-storage.remimichel.fr/
+
 ## Récupération des informations de connexion
 
 * Se connecter sur l'interface OVH avec les identifiants
@@ -35,9 +38,16 @@ $client = new OpenStack("https://auth.cloud.ovh.net/v2.0", array(
 'password' => "",
 'tenantName' => "",
 ));
-$objectStoreService = $client->objectStoreService('swift', "GRA1");
-$cont = $objectStoreService->getContainer("photos");
-$obj = $cont->getPartialObject('fullsize/ovh-summit-2014-backstage-DS.jpg');
-print_r($obj->getMetadata());
+$objectStoreService = $client->objectStoreService('swift', "SGB");
+$cont = $objectStoreService->getContainer("courtisia");
+...
 ?>
 ```
+
+## Préconisations & limitations
+* Les fichiers générés ne possèdent pas d'URL d'accès unique. Il convient donc de générer des URLs temporaires et donc d'implémenter la génération de ces URLs
+* Les fichiers ne sont pas stockés avec des identifiants. C'est le nom qui fait foi. Ainsi il faut prévoir la génération de noms uniques
+
+## Documentation 
+* **Wrapper PHP**: https://github.com/php-opencloud/openstack
+* Partie SDK: https://docs.ovh.com/fr/public-cloud/gestion-des-tokens/
